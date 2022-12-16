@@ -1,6 +1,7 @@
 import React from 'react'
+import { pelicula } from './peliculas.model';
 
-const peliculaIndividual = () => {
+const peliculaIndividual = (props: peliculaIndividualProps) => {
   return (
     <div>peliculaIndividual</div>
   )
@@ -9,5 +10,5 @@ const peliculaIndividual = () => {
 export default peliculaIndividual
 
 interface peliculaIndividualProps {
-    pelicula: any;
+    pelicula: pelicula;
 }
