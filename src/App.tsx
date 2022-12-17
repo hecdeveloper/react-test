@@ -1,5 +1,4 @@
 import "./App.css";
-import PeliculaIndividual from "./peliculas/PeliculaIndividual";
 
 import { pelicula } from "./peliculas/peliculas.model";
 function App() {
@@ -11,7 +10,7 @@ function App() {
   };
   return (
     <>
-      <PeliculaIndividual pelicula={peliculaPrueba} />
+      {/* <PeliculaIndividual pelicula={peliculaPrueba} /> */}
     </>
   );
 }

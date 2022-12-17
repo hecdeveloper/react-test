@@ -1,7 +1,7 @@
 import css from "./peliculaindividual.module.css";
 import { pelicula } from "./peliculas.model";
 
-const PeliculaIndividual = (props: PeliculaIndividualProps) => {
+const PeliculaIndividual = (props: peliculaIndividualProps) => {
   const construirLink = () => `/pelicula/${props.pelicula.id}`;
   return (
     <div className={css.div}>
@@ -17,7 +17,7 @@ const PeliculaIndividual = (props: PeliculaIndividualProps) => {
 
 export default PeliculaIndividual;
 
-interface PeliculaIndividualProps {
+interface peliculaIndividualProps {
     pelicula: pelicula;
   }
   
