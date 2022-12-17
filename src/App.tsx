@@ -20,17 +20,12 @@ function App() {
   ]
   const peliculasProximosEstrenos: pelicula[] = [
     {
-      id: 1,
-      titulo: "Spiderman",
+      id: 3,
+      titulo: "Soul",
       poster:
-        "https://cdn.shopify.com/s/files/1/0265/2769/4934/products/spiderman_ver1_xxlg_1024x1024@2x.jpg?v=1628007516",
+        "https://lumiere-a.akamaihd.net/v1/images/p_soul_disneyplus_v2_20907_764da65d.jpeg",
     },
-    {
-      id: 2,
-      titulo: "Moana",
-      poster:
-        "https://m.media-amazon.com/images/I/618d8ue5SmL._AC_.jpg",
-    },
+
   ]
   // const peliculaPrueba: pelicula = {
   //   id: 1,
@@ -42,7 +37,7 @@ function App() {
     <>
       {/* <PeliculaIndividual pelicula={peliculaPrueba} /> */}
       <h3>En Cartelera</h3>
-      <ListadoPeliculas peliculas={peliculasEnCartelera}/>
+      <ListadoPeliculas peliculas={peliculasProximosEstrenos}/>
     </>
   );
 }
