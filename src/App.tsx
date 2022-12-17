@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import "./App.css";
 import ListadoPeliculas from "./peliculas/ListadoPeliculas";
-import PeliculaIndividual from "./peliculas/PeliculaIndividual";
 
 import { pelicula } from "./peliculas/peliculas.model";
 function App() {
+
+  useEffect(() =>{
+    const timerId = setTimeout(() => {
+      
+    
+    }, 1000);
+    return () => clearTimeout(timerId);
+  })
   const peliculasEnCartelera: pelicula[] = [
     {
       id: 1,
@@ -37,6 +45,8 @@ function App() {
     <>
       {/* <PeliculaIndividual pelicula={peliculaPrueba} /> */}
       <h3>En Cartelera</h3>
+      <ListadoPeliculas peliculas={peliculasEnCartelera}/>
+      <h3>Estrenos</h3>
       <ListadoPeliculas peliculas={peliculasProximosEstrenos}/>
     </>
   );
