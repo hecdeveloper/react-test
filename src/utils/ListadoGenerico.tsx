@@ -7,7 +7,7 @@ const ListadoGenerico = (props:listadoGenericoProps) => {
             return props.cargandoUI
         }
         return <Cargando/>
-    }else if(props.listado.listado.length === 0){
+    }else if(props.listado.length === 0){
         if(props.listadoVacioUI){
             return props.listadoVacioUI
         }

@@ -3,25 +3,22 @@ import PeliculaIndividual from "./PeliculaIndividual";
 import { pelicula } from "./peliculas.model";
 import css from "./ListadoPeliculas.module.css";
 import Cargando from "../utils/Cargando";
+import ListadoGenerico from "../utils/ListadoGenerico";
 
-const ListadoPeliculas = (props: listadoPelliculasProps) => {
-  if(!props.peliculas){
-    return <Cargando/>
-  }else if (props.peliculas.length === 0) {
-    return <p>No hay peliculas</p>;
-  }else {
-    return(
+const ListadoPeliculas = (props: listadoPeliculasProps) => {
+  return (
+    <ListadoGenerico listado={props.peliculas}>
       <div className={css.div}>
-        {props.peliculas.map((pelicula) => (
+        {props.peliculas?.map((pelicula) => (
           <PeliculaIndividual pelicula={pelicula} key={pelicula.id} />
         ))}
       </div>
-    )
-  }
+    </ListadoGenerico>
+  );
 };
 
 export default ListadoPeliculas;
 
-interface listadoPelliculasProps {
+interface listadoPeliculasProps {
   peliculas?: pelicula[];
 }
