@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const timerId = setTimeout(() => {
       setPeliculas({
-        enCartelera:[
+        enCartelera: [
           {
             id: 1,
             titulo: "Spiderman",
@@ -21,27 +21,28 @@ function App() {
             poster: "https://m.media-amazon.com/images/I/618d8ue5SmL._AC_.jpg",
           },
         ],
-        proximosEstrenos:[
+        proximosEstrenos: [
           {
             id: 3,
             titulo: "Soul",
             poster:
               "https://lumiere-a.akamaihd.net/v1/images/p_soul_disneyplus_v2_20907_764da65d.jpeg",
           },
-        ]
-      })
-    }, 1000);
+        ],
+      });
+    }, 500);
     return () => clearTimeout(timerId);
   });
 
-
   return (
     <>
-      {/* <PeliculaIndividual pelicula={peliculaPrueba} /> */}
-      <h3>En Cartelera</h3>
-      <ListadoPeliculas peliculas={peliculas.enCartelera} />
-      <h3>Estrenos</h3>
-      <ListadoPeliculas peliculas={peliculas.proximosEstrenos } />
+      <div className="container">
+        {/* <PeliculaIndividual pelicula={peliculaPrueba} /> */}
+        <h3>En Cartelera</h3>
+        <ListadoPeliculas peliculas={peliculas.enCartelera} />
+        <h3>Estrenos</h3>
+        <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+      </div>
     </>
   );
 }
