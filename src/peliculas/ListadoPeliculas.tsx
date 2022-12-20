@@ -2,10 +2,11 @@ import React from "react";
 import PeliculaIndividual from "./PeliculaIndividual";
 import { pelicula } from "./peliculas.model";
 import css from "./ListadoPeliculas.module.css";
+import Cargando from "../utils/Cargando";
 
 const ListadoPeliculas = (props: listadoPelliculasProps) => {
   if(!props.peliculas){
-    return <></>
+    return <Cargando/>
   }else if (props.peliculas.length === 0) {
     return <p>No hay peliculas</p>;
   }else {
