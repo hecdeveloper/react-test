@@ -3,24 +3,22 @@ import "./App.css";
 import IndiceGeneros from "./generos/IndiceGeneros";
 import LandingPage from "./LandingPage";
 import Menu from "./utils/Menu";
+import rutas from "./route-config";
 function App() {
-
-
   return (
-    <><BrowserRouter>
-      <Menu />
-      <div className="container">
-        
+    <>
+      <BrowserRouter>
+        <Menu />
+        <div className="container">
           <Switch>
-            <Route exact path="/">
-            <LandingPage/>
-            </Route>
-            <Route path="/generos">
-            <IndiceGeneros/>
-          </Route>
+            {rutas.map((ruta) => (
+              <Route key={ruta.path} path={ruta.path} exact={ruta.excact}>
+                <ruta.componente />
+              </Route>
+            ))}
           </Switch>
-      </div>
-        </BrowserRouter>
+        </div>
+      </BrowserRouter>
     </>
   );
 }
