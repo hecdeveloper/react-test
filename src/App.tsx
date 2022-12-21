@@ -3,6 +3,7 @@ import "./App.css";
 import ListadoPeliculas from "./peliculas/ListadoPeliculas";
 
 import { landingPageDTO } from "./peliculas/peliculas.model";
+import Menu from "./utils/Menu";
 function App() {
   const [peliculas, setPeliculas] = useState<landingPageDTO>({});
   useEffect(() => {
@@ -36,8 +37,8 @@ function App() {
 
   return (
     <>
+      <Menu />
       <div className="container">
-        {/* <PeliculaIndividual pelicula={peliculaPrueba} /> */}
         <h3>En Cartelera</h3>
         <ListadoPeliculas peliculas={peliculas.enCartelera} />
         <h3>Estrenos</h3>
