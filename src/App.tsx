@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { landingPageDTO } from "./peliculas/peliculas.model";
 import Menu from "./utils/Menu";
 import IndiceGeneros from "./generos/IndiceGeneros";
+import LandingPage from "./LandingPage";
 function App() {
 
 
@@ -15,7 +16,7 @@ function App() {
         
           <Switch>
             <Route exact path="/">
-         
+            <LandingPage/>
             </Route>
             <Route path="/generos">
             <IndiceGeneros/>
