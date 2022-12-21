@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import ListadoPeliculas from "./peliculas/ListadoPeliculas";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { landingPageDTO } from "./peliculas/peliculas.model";
 import Menu from "./utils/Menu";
 import IndiceGeneros from "./generos/IndiceGeneros";
@@ -37,21 +37,23 @@ function App() {
   });
 
   return (
-    <>
+    <><BrowserRouter>
       <Menu />
       <div className="container">
-        <Switch>
-          <Route exact path="/">
-            <h3>En Cartelera</h3>
-            <ListadoPeliculas peliculas={peliculas.enCartelera} />
-            <h3>Estrenos</h3>
-            <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
-          </Route>
-          <Route >
+        
+          <Switch>
+            <Route exact path="/">
+              <h3>En Cartelera</h3>
+              <ListadoPeliculas peliculas={peliculas.enCartelera} />
+              <h3>Estrenos</h3>
+              <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+            </Route>
+            <Route path="/generos">
             <IndiceGeneros/>
           </Route>
-        </Switch>
+          </Switch>
       </div>
+        </BrowserRouter>
     </>
   );
 }
