@@ -4,6 +4,7 @@ import ListadoPeliculas from "./peliculas/ListadoPeliculas";
 import { Route, Switch } from "react-router-dom";
 import { landingPageDTO } from "./peliculas/peliculas.model";
 import Menu from "./utils/Menu";
+import IndiceGeneros from "./generos/IndiceGeneros";
 function App() {
   const [peliculas, setPeliculas] = useState<landingPageDTO>({});
   useEffect(() => {
@@ -40,11 +41,14 @@ function App() {
       <Menu />
       <div className="container">
         <Switch>
-          <Route>
+          <Route exact path="/">
             <h3>En Cartelera</h3>
             <ListadoPeliculas peliculas={peliculas.enCartelera} />
             <h3>Estrenos</h3>
             <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+          </Route>
+          <Route >
+            <IndiceGeneros/>
           </Route>
         </Switch>
       </div>
