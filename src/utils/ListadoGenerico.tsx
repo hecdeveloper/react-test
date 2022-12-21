@@ -1,26 +1,25 @@
-import React, { ReactElement } from 'react'
-import Cargando from './Cargando'
+import { ReactElement } from "react";
+import Cargando from "./Cargando";
 
-const ListadoGenerico = (props:listadoGenericoProps) => {
-    if(!props.listado){
-        if(props.cargandoUI){
-            return props.cargandoUI
+export default function ListadoGenerico(props: listadoGenericoProps){
+    if (!props.listado){
+        if (props.cargandoUI){
+            return props.cargandoUI;
         }
-        return <Cargando/>
-    }else if(props.listado.length === 0){
-        if(props.listadoVacioUI){
-            return props.listadoVacioUI
+        return <Cargando />
+    } else if (props.listado.length === 0){
+        if (props.listadoVacioUI){
+            return props.listadoVacioUI;
         }
-        return <p>No hay elementos mara mostrar</p>
-    }else {
+        return <>No hay elementos para mostrar</>
+    } else{
         return props.children;
     }
 }
 
-export default ListadoGenerico
-interface listadoGenericoProps {
+interface listadoGenericoProps{
     listado: any;
-    children: ReactElement; 
+    children: ReactElement;
     cargandoUI?: ReactElement;
     listadoVacioUI?: ReactElement;
 }

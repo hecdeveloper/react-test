@@ -1,23 +1,22 @@
-import css from "./peliculaindividual.module.css";
 import { pelicula } from "./peliculas.model";
+import css from './PeliculaIndividual.module.css'
 
-const PeliculaIndividual = (props: peliculaIndividualProps) => {
-  const construirLink = () => `/pelicula/${props.pelicula.id}`;
-  return (
-    <div className={css.div}>
-      <a href={construirLink()}>
-        <img src={props.pelicula.poster} alt="POSTER" />
-      </a>
-      <p>
-        <a href={construirLink()}>{props.pelicula.titulo}</a>
-      </p>
-    </div>
-  );
-};
+export default function PeliculaIndividual(props: peliculaIndividualProps){
 
-export default PeliculaIndividual;
+    const construirLink = () => `/pelicula/${props.pelicula.id}`
 
-interface peliculaIndividualProps {
+    return (
+        <div className={css.div}>
+            <a href={construirLink()}>
+                <img src={props.pelicula.poster} alt="Poster" />
+            </a>
+            <p>
+                <a href={construirLink()}>{props.pelicula.titulo}</a>
+            </p>
+        </div>
+    )
+}
+
+interface peliculaIndividualProps{
     pelicula: pelicula;
-  }
-  
+}
