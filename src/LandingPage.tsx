@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { landingPageDTO } from './peliculas/peliculas.model'
 import ListadoPeliculas from './peliculas/ListadoPeliculas'
 
-export default function LandingPage() {
+import React from 'react'
 
+const LandingPage = () => {
     const [peliculas, setPeliculas] = useState<landingPageDTO>({})
 
     useEffect(() => {
@@ -41,3 +42,5 @@ export default function LandingPage() {
         </>
     )
 }
+
+export default LandingPage

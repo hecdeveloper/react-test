@@ -1,9 +1,8 @@
-import React from 'react';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import rutas from './route-config';
 import Menu from './utils/Menu';
-import rutas from './route-config'
 
 function App() {
   return (
