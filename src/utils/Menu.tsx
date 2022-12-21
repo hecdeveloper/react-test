@@ -5,7 +5,7 @@ const Menu = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <NavLink activeClassName={claseActiva} to="/" className="navbar-brand">
+        <NavLink activeClassName={claseActiva} to="/" exact className="navbar-brand">
           React Peliculas
         </NavLink>
         <div className="collapse navbar-collapse">
